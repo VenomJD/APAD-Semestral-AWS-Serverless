@@ -90,8 +90,8 @@ export default function App() {
 
   function editTodo(id: string) {
     const todo = todos.find((t) => t.id === id);
-    if (!todo) return;
-    const newContent = window.prompt("Nuevo contenido de la tarea", todo.content);
+    if (!todo) return; // <-- Asegúrate de que todo existe
+    const newContent = window.prompt("Nuevo contenido de la tarea", todo.content || "");
     if (!newContent) return;
     const newStatus = window.prompt(
       "Nuevo estado (pendiente, en progreso, completada)",
